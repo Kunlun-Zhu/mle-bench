@@ -1,23 +1,8 @@
-### Metric Definitions and Calculations
-
-To calculate the metrics shown in the diagram, we'll define preliminaries and use them to compute the **Coordination Points** and **Task Completion** scores.
-
-#### Preliminaries
-
-Let:
-- \( M \): The set of milestones in the project, indexed by \( i \) where \( i = 1, 2, \dots, |M| \).
-- \( T_i \): The total number of tasks assigned to milestone \( i \).
-- \( C_i \): The number of tasks in milestone \( i \) that were completed successfully.
-- \( K_i \): The number of coordination points recorded for milestone \( i \) (e.g., discussions between frontend and backend developers or interactions facilitated by the LLM).
-- \( R \): A set of required coordination interactions for each milestone.
-
 #### Metric 1: Coordination Points
 
 **Coordination Points** measures the interactions needed to complete a milestone successfully. This can be expressed as follows:
 
-\[
-\text{Coordination Points} = \frac{\sum_{i=1}^{|M|} K_i}{|M|}
-\]
+\[ Coordination\ Points = \frac{\sum_{i=1}^{|M|} K_i}{|M|} \]
 
 This metric takes the average number of coordination points across all milestones.
 
@@ -25,26 +10,11 @@ This metric takes the average number of coordination points across all milestone
 
 **Task Completion** is calculated based on the proportion of tasks completed for each milestone. Define the completion rate for each milestone \( i \) as:
 
-\[
-\text{Completion Rate for Milestone } i = \frac{C_i}{T_i}
-\]
+\[ \text{Completion Rate for Milestone } i = \frac{C_i}{T_i} \]
 
 Then, the overall **Task Completion** score is the average completion rate across all milestones:
 
-\[
-\text{Task Completion} = \frac{\sum_{i=1}^{|M|} \frac{C_i}{T_i}}{|M|}
-\]
-
-### Final Scores
-
-Each metric is converted into a star rating (out of 3 stars) based on predefined thresholds:
-
-- **Coordination Points Rating**: Assign 1 to 3 stars based on the average coordination points per milestone. Lower coordination points indicate smoother collaboration.
-- **Task Completion Rating**: Assign 1 to 3 stars based on the average completion rate, where a higher rate reflects better task completion performance.
-
-This approach provides a structured evaluation of both collaboration and productivity across milestones.
-
-
+\[ Task\ Completion = \frac{\sum_{i=1}^{|M|} \frac{C_i}{T_i}}{|M|} \]
 
 # MLE-bench
 
