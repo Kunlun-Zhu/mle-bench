@@ -1,19 +1,14 @@
 ### Metric Definitions and Calculations
 
-To calculate the metrics shown in the diagram, we'll define preliminaries and use them to compute the **Coordination Points** and **Task Completion** scores.
-
-#### Preliminaries
-
-Let:
-- \( M \): The set of milestones in the project, indexed by \( i \) where \( i = 1, 2, \dots, |M| \).
-- \( T_i \): The total number of tasks assigned to milestone \( i \).
-- \( C_i \): The number of tasks in milestone \( i \) that were completed successfully.
-- \( K_i \): The number of coordination points recorded for milestone \( i \) (e.g., discussions between frontend and backend developers or interactions facilitated by the LLM).
-- \( R \): A set of required coordination interactions for each milestone.
+To calculate the metrics shown in the diagram, we'll define **Coordination Points** and **Task Completion** scores and introduce the relevant symbols within each metric.
 
 #### Metric 1: Coordination Points
 
-**Coordination Points** measures the interactions needed to complete a milestone successfully. This can be expressed as follows:
+**Coordination Points** measures the interactions needed to complete a milestone successfully. Let:
+- \( M \) be the set of milestones in the project, indexed by \( i \) where \( i = 1, 2, \dots, |M| \).
+- \( K_i \) be the number of coordination points recorded for milestone \( i \) (e.g., discussions between frontend and backend developers or interactions facilitated by the LLM).
+
+The **Coordination Points** score can be calculated as:
 
 $$
 \text{Coordination Points} = \frac{\sum_{i=1}^{|M|} K_i}{|M|}
@@ -23,7 +18,11 @@ This metric takes the average number of coordination points across all milestone
 
 #### Metric 2: Task Completion
 
-**Task Completion** is calculated based on the proportion of tasks completed for each milestone. Define the completion rate for each milestone \( i \) as:
+**Task Completion** is calculated based on the proportion of tasks completed for each milestone. Let:
+- \( T_i \) represent the total number of tasks assigned to milestone \( i \).
+- \( C_i \) be the number of tasks in milestone \( i \) that were completed successfully.
+
+The completion rate for each milestone \( i \) is:
 
 $$
 \text{Completion Rate for Milestone } i = \frac{C_i}{T_i}
